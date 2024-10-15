@@ -60,18 +60,86 @@ main{
 }
 h1.title{
     margin-top: 5rem;
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 p.description{
+    font-weight: 600;
     margin: 2rem;
 }
-div.upload-section{
+/* Blue Input Div */
+div.upload-section {
     background-color: var(--light-blue);
     width: 50%;
-    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
     margin: 0 auto;
     border-radius: 1rem;
 }
-.custom-file-upload{
+
+div.inputFileButtonDiv {
+    width: 60%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+
+label.custom-file-upload {
+    width: 60%;
+    height: 100%;
     border: 2px solid black;
-    padding: 2rem 0.5rem;
+    box-sizing: border-box;
+    border-radius: 0.4rem;
+    padding: 0rem 1rem;
+
+    text-align: start;
+    overflow: hidden;
+    /* font-size: 0.5rem; */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    span.fileSpan{
+        text-wrap: nowrap;
+        overflow: hidden;
+    }
+    span.ufs.material-symbols-outlined {
+        font-variation-settings: 
+            'FILL' 1;
+    }
+}
+
+
+button.custom-file-upload {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 1rem;
+    background-color: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 0.4rem;
+    margin-left: 1px;
+    cursor: pointer;
+    span.anal.material-symbols-outlined {
+        font-variation-settings: 
+            'FILL' 1,
+            'wght' 200;
+    }
+    
+}
+
+
+p.inputType {
+    display: block;
+    width: 90%;
+    margin: 1rem 0 0 0;
+    font-size: 0.9rem;
+    color: grey;
 }
