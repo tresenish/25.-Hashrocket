@@ -11,9 +11,6 @@ html{
     --blue: #007aff;
     --light-blue: #ebf3fe;
 }
-body{
-    /* background-color: bisque; */
-}
 /* NAV */
 nav{
     height: 3.5rem;
@@ -98,7 +95,6 @@ label.custom-file-upload {
 
     text-align: start;
     overflow: hidden;
-    /* font-size: 0.5rem; */
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -182,11 +178,22 @@ div.rightCards{
     width: 60%;
 }
 div.greySwitchCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-color: #e6e6e6;
     border-radius: 3rem;
     aspect-ratio: 1 / 1 ;
     width: 40%;
     margin: 2rem auto;
+
+}
+.greySwitchCard img{
+    width: 80%;
+    height: auto;
+    border-radius: 2rem;
+
 }
 p.cardDescription{
     width: 80%;
@@ -238,7 +245,6 @@ div.footerBlueDiv button{
 
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     margin: 1rem auto;
     color: white;
     font-family: 1rem;
