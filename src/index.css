@@ -226,6 +226,10 @@ p.card.selected{
     color: var(--blue);
     border: 2px solid var(--blue);
 }
+p.card:hover{
+    color: #888;
+    border: 2px solid #888;
+}
 /* FOOTER */
 footer{
     margin: 1.5rem 0;
