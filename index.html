@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Predict ad performance and launch winning campaigns with Hashrocket">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- Icon -->
-    <link rel="icon" href="./icon.png" type="image/x-icon">
+    <link rel="icon" href="./src/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/index.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,1,-50..200" /> -->
-
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="index.css">
 
     <title>DevHashrocket</title>
 </head>
@@ -27,7 +26,7 @@
     <div class="container">
         <!-- Header Navigation -->
         <nav class="header">
-            <img id="logo" src="logo.png" alt="Hashrocket Logo">
+            <img id="logo" src="./src/logo.png" alt="Hashrocket Logo">
             <div class="buttons">
                 <a href="#" id="startForFree" class="nav-button">Start for free</a>
                 <a href="#" id="logIn" class="nav-button">Log In</a>
@@ -66,9 +65,20 @@
                     <p>With Hashrocket, you are focused on launching ad campaigns that perform.</p>
                 </div>
                 <div class="rightCards">
-                    <div class="greySwitchCard">Conversion Rate</div>
-                    <p class="greySwitchCard">Estimated Conversion Rate shows how well your ad will convert, along with the industry conversion rate benchmark.</p>
-                    
+                    <div class="greySwitchCard">
+                        <img class="grayCardPhoto" src="./src/dog1.png" alt="">
+                    </div>
+                    <p class="cardDescription">Estimated Conversion Rate shows how well your ad will convert, along with the industry conversion rate benchmark.</p>
+                    <div class="cardContainer">
+                        <p class="card selected"><span class="card material-symbols-outlined">person_add</span> Conversion Rate</p>
+                        <p class="card"><span class="card material-symbols-outlined">verified</span> CTR Score</p>
+                        <p class="card"><span class="card material-symbols-outlined">visibility</span> Attention Retention</p>
+                        <p class="card"><span class="card material-symbols-outlined">target</span> Engagement Rate</p>
+                        <p class="card"><span class="card material-symbols-outlined">theaters</span> Reels Analysis</p>
+                        <p class="card"><span class="card material-symbols-outlined">add_circle</span> Ad strengths</p>
+                        <p class="card"><span class="card material-symbols-outlined">mood</span> Emotional Analysis</p>
+                        <p class="card"><span class="card material-symbols-outlined">campaign</span> Recommendations</p>
+                    </div>
                 </div>
             </section>
             <footer>
@@ -81,12 +91,64 @@
     </div>
 
     <script>
+        // FileName swap script
         const fileInput = document.getElementById('file-upload');
         const fileSpan = document.querySelector('label.custom-file-upload .fileSpan');
-        fileInput.addEventListener('change', function() {
-            fileSpan.textContent = this.files[0] ? this.files[0].name : 'Upload your ad';
-        });
+        fileInput.addEventListener('change', function() {fileSpan.textContent = this.files[0] ? this.files[0].name : 'Upload your ad';});
+        
+        //Blue&Gray card script
+        const cardData = {
+            'Conversion Rate': {
+                description: 'Estimated Conversion Rate shows how well your ad will convert, along with the industry conversion rate benchmark.',
+                imgSrc: './src/dog1.png'
+            },
+            'CTR Score': {
+                description: 'CTR Score (Click-Through Rate) measures the percentage of people who clicked on an ad after seeing it. This indicates how effectiveness of an ad.',
+                imgSrc: './src/cat1.png'
+            },
+            'Attention Retention': {
+                description: 'Attention Retention measures how long users stay engaged with an ad after it initially grabs their attention, reflecting its ability to hold viewer interest.',
+                imgSrc: './src/cat2.png'
+            },
+            'Engagement Rate': {
+                description: 'Estimated Engagement Rate shows you the level of potential interaction users will have with an ad.',
+                imgSrc: './src/dog1.png'
+            },
+            'Reels Analysis': {
+                description: 'We analyze not only static ads but also Reels (video ad format) and provide recommendations for improvements in audio, video, and storyline.',
+                imgSrc: './src/cat1.png'
+            },
+            'Ad strengths': {
+                description: "Hashrocket shows the strong sides of your ad creative - so it's easier for you to catch what's great about your ad creative.",
+                imgSrc: './src/cat2.png'
+            },
+            'Emotional Analysis': {
+                description: 'Emotional Analysis measures the emotions evoked by an ad in your audience, helping to gauge emotional connection and impact.',
+                imgSrc: './src/dog1.png'
+            },
+            'Recommendations': {
+                description: 'We provide you with personalized recommendations based on your brand, target audience and ad goals.',
+                imgSrc: './src/cat1.png'
+            }
+        };
 
+        // Get all card elements
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                cards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                const cardName = card.childNodes[1].nodeValue.trim();
+                if (cardData[cardName]) {
+                    const description = cardData[cardName].description;
+                    document.querySelector('.cardDescription').textContent = description;
+                    const imgSrc = cardData[cardName].imgSrc;
+                    document.querySelector('.greySwitchCard img').src = imgSrc;
+                } else {
+                    console.error('Card name not found in cardData:', cardName);
+                }
+            });
+        });
     </script>
 
 </body>
