@@ -4,12 +4,12 @@ html{
 }
 @media only screen and (max-width: 1200px) {
     html{
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 @media only screen and (max-width: 700px) {
     html{
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 *{
@@ -214,7 +214,7 @@ section.cardsAndText{
 }
 @media only screen and (max-width: 1000px) {
     section.cardsAndText{
-        width: 80%;
+        width: 85%;
     }
 }
 @media only screen and (max-width: 700px) {
@@ -261,13 +261,13 @@ div.greySwitchCard{
 @media only screen and (max-width: 700px) {
     div.greySwitchCard{
         width: 70%;
+        max-width: 22rem;
     }
 }
 .greySwitchCard img{
     width: 80%;
     height: auto;
     border-radius: 2rem;
-
 }
 p.cardDescription{
     width: 80%;
@@ -279,6 +279,12 @@ div.cardContainer{
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
+}
+@media only screen and (max-width: 700px) {
+    div.cardContainer{
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
 }
 p.card{
     color: #c0c0c0;
@@ -320,7 +326,7 @@ div.footerBlueDiv p{
 }
 div.footerBlueDiv button{
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     display: flex;
     align-items: center;
@@ -335,7 +341,6 @@ div.footerBlueDiv button{
             'FILL' 1,
             'wght' 200;
         margin-right: 0.5rem;
-    font-size: 1.5rem;
-
+        font-size: 1.5rem;
     }
 }
