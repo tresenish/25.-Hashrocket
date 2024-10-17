@@ -238,6 +238,7 @@ div.leftText{
 div.rightCards{
     background-color: #f7f7f7;
     width: 60%;
+    padding: 1rem 0;
 }
 @media only screen and (max-width: 700px) {
     div.rightCards{
@@ -256,7 +257,11 @@ div.greySwitchCard{
     aspect-ratio: 1 / 1 ;
     width: 40%;
     margin: 2rem auto;
-
+}
+@media only screen and (max-width: 700px) {
+    div.greySwitchCard{
+        width: 70%;
+    }
 }
 .greySwitchCard img{
     width: 80%;
