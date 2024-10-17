@@ -35,8 +35,14 @@
 
         <!-- Main Content -->
         <main>
-            <h1 class="title">Predict Ad Performance & Launch Winning Campaigns</h1>
-            <p class="description">Get instant analysis and insights to make smarter marketing decisions.</p>
+            <div id="lopLeftGradient"></div>
+            <img id="soc-med1" src="./src/soc-med1.png" alt="">
+            <img id="soc-med2" src="./src/soc-med2.png" alt="">
+            <div id="midRightGradient"></div>
+
+            <h1 class="title">Predict Ad Performance &<br> Launch Winning Campaigns</h1>
+            <p class="description">Analyze your ad creatives, get insights, <br>
+                and make smarter marketing decisions</p>
 
             <!-- File Upload Section -->
             <div class="upload-section">
@@ -51,30 +57,34 @@
 
                 <p class="inputType">.JPG, .JPEG, or .PNG formats</p>
             </div>
-            
-            <!-- Some text after blue div -->
-            <p class="inBetweenP">Try and see how well your ad visuals will perform. Predict CTR, conversion, engagement rates, and other metrics.</p>
-            <p class="learnMoreP"><a href="#" class="learn-more">Learn more</a><span class="material-symbols-outlined">arrow_forward</span></p>
 
+            <!-- Some text after blue div -->
+            <p class="inBetweenP">Try and see how well your ad visuals will perform.<br> Predict CTR, conversion, engagement rates, and other metrics.</p>
+            <p class="learnMoreP"><a href="#" class="learn-more">Learn more</a><span class="material-symbols-outlined">arrow_forward</span></p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <!-- Text and grey cards section -->
             <section class="cardsAndText">
                 <div class="leftText">
-                    <h2>Identify High-Performing Ad Creatives Without</h2>
+                    <h2>Identify <span id="high-performing">High-Performing</span>  Ad Creatives Without</h2>
                     <p>Hashrocket provides predictive analytics for your ad creatives, and gives you performance insights,
                          AI-powered improvement suggestions, and a preview of how your audience will react to each ad visual.</p>
-                    <p>With Hashrocket, you are focused on launching ad campaigns that perform.</p>
+                    <p>Focus on launching ad campaigns that perform.</p>
+                    <a style="text-decoration: none; color: var(--blue);" href="">View report example</a>
                 </div>
                 <div class="rightCards">
-                    <div class="greySwitchCard">
-                        <img class="grayCardPhoto" src="./src/dog1.png" alt="">
-                    </div>
+                    <img class="grayCardPhoto" src='./src/grey card/Conversion Rate.png' alt="">
                     <p class="cardDescription">Estimated Conversion Rate shows how well your ad will convert, along with the industry conversion rate benchmark.</p>
                     <div class="cardContainer">
                         <p class="card selected"><span class="card material-symbols-outlined">person_add</span> Conversion Rate</p>
                         <p class="card"><span class="card material-symbols-outlined">verified</span> CTR Score</p>
                         <p class="card"><span class="card material-symbols-outlined">visibility</span> Attention Retention</p>
                         <p class="card"><span class="card material-symbols-outlined">target</span> Engagement Rate</p>
-                        <p class="card"><span class="card material-symbols-outlined">theaters</span> Reels Analysis</p>
                         <p class="card"><span class="card material-symbols-outlined">add_circle</span> Ad strengths</p>
                         <p class="card"><span class="card material-symbols-outlined">mood</span> Emotional Analysis</p>
                         <p class="card"><span class="card material-symbols-outlined">campaign</span> Recommendations</p>
@@ -100,38 +110,33 @@
         const cardData = {
             'Conversion Rate': {
                 description: 'Estimated Conversion Rate shows how well your ad will convert, along with the industry conversion rate benchmark.',
-                imgSrc: './src/dog1.png'
+                imgSrc: './src/grey card/Conversion Rate.png'
             },
             'CTR Score': {
                 description: 'CTR Score (Click-Through Rate) measures the percentage of people who clicked on an ad after seeing it. This indicates how effectiveness of an ad.',
-                imgSrc: './src/cat1.png'
+                imgSrc: './src/grey card/CTR Score.png'
             },
             'Attention Retention': {
                 description: 'Attention Retention measures how long users stay engaged with an ad after it initially grabs their attention, reflecting its ability to hold viewer interest.',
-                imgSrc: './src/cat2.png'
+                imgSrc: './src/grey card/Attention Retention.png'
             },
             'Engagement Rate': {
                 description: 'Estimated Engagement Rate shows you the level of potential interaction users will have with an ad.',
-                imgSrc: './src/dog1.png'
-            },
-            'Reels Analysis': {
-                description: 'We analyze not only static ads but also Reels (video ad format) and provide recommendations for improvements in audio, video, and storyline.',
-                imgSrc: './src/cat1.png'
+                imgSrc: './src/grey card/Engagement Rate.png'
             },
             'Ad strengths': {
                 description: "Hashrocket shows the strong sides of your ad creative - so it's easier for you to catch what's great about your ad creative.",
-                imgSrc: './src/cat2.png'
+                imgSrc: './src/grey card/Ad strengths.png'
             },
             'Emotional Analysis': {
                 description: 'Emotional Analysis measures the emotions evoked by an ad in your audience, helping to gauge emotional connection and impact.',
-                imgSrc: './src/dog1.png'
+                imgSrc: './src/grey card/Emotional Analysis.png'
             },
             'Recommendations': {
                 description: 'We provide you with personalized recommendations based on your brand, target audience and ad goals.',
-                imgSrc: './src/cat1.png'
+                imgSrc: './src/grey card/Recommendations.png'
             }
         };
-
         // Get all card elements
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
@@ -143,7 +148,7 @@
                     const description = cardData[cardName].description;
                     document.querySelector('.cardDescription').textContent = description;
                     const imgSrc = cardData[cardName].imgSrc;
-                    document.querySelector('.greySwitchCard img').src = imgSrc;
+                    document.querySelector('.grayCardPhoto').src = imgSrc; // Updated selector for the image
                 } else {
                     console.error('Card name not found in cardData:', cardName);
                 }

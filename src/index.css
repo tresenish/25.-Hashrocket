@@ -75,10 +75,45 @@ a#logIn:hover{
 
 }
 /* MAIN */
+
 main{
     text-align: center;
 }
-
+#lopLeftGradient{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%,-50%);
+    content: '';
+    background: rgb(59,133,251);
+    background: radial-gradient( rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+img#soc-med1{
+    position: absolute;
+    top: 10rem;
+    left: 0;
+}
+img#soc-med2{
+    position: absolute;
+    top: 10rem;
+    right: 0;
+}
+div#midRightGradient{
+    position: absolute;
+    /* right: 0; */
+    /* bottom: 0; */
+    transform: translate(50%,30%);
+    content: '';
+    background: rgb(59,133,251);
+    background: radial-gradient( rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    /* border: 3px solid black; */
+}
 h1.title{
     margin: 5rem auto 3rem auto;
     font-size: 2.5rem;
@@ -97,7 +132,7 @@ p.description{
 }
 /* Blue Input Div */
 div.upload-section {
-    background-color: var(--light-blue);
+    background: linear-gradient(90deg, rgba(8, 111, 255, 0.4), rgba(53, 129, 250, 0.4), rgba(111, 181, 255, 0.4));
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -188,7 +223,7 @@ p.inBetweenP{
     width: 50%;
     display: flex;
     justify-content: center;
-    margin: 1rem auto;
+    margin: 3rem auto;
 }
 @media only screen and (max-width: 500px) {
     p.inBetweenP{
@@ -225,6 +260,8 @@ section.cardsAndText{
 div.leftText{
     display: flex;
     flex-direction: column;
+    background-color: #E5E7F04D;
+    padding: 1rem;
     gap: 1rem;
     width: 40%;
     text-align: left; 
@@ -235,8 +272,13 @@ div.leftText{
         margin: 0 auto;
     }
 }
+span#high-performing{
+    background: linear-gradient(90deg, #2569C8, #3581FA, #FFBBB7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+}
 div.rightCards{
-    background-color: #f7f7f7;
     width: 60%;
     padding: 1rem 0;
 }
@@ -247,23 +289,10 @@ div.rightCards{
 
     }
 }
-div.greySwitchCard{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+img.grayCardPhoto{
+    max-width: 60%;
+}
 
-    background-color: #e6e6e6;
-    border-radius: 3rem;
-    aspect-ratio: 1 / 1 ;
-    width: 40%;
-    margin: 2rem auto;
-}
-@media only screen and (max-width: 700px) {
-    div.greySwitchCard{
-        width: 70%;
-        max-width: 22rem;
-    }
-}
 .greySwitchCard img{
     width: 80%;
     height: auto;
