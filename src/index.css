@@ -2,6 +2,16 @@ html{
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
 }
+@media only screen and (max-width: 1200px) {
+    html{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    html{
+        font-size: 10px;
+    }
+}
 *{
     border: 0;
     margin: 0;
@@ -15,9 +25,22 @@ html{
 nav{
     height: 3.5rem;
     padding: 2rem 2rem;
-    /* background-color: lightblue; */
     display: flex;
     justify-content: space-between;
+}
+@media only screen and (max-width: 450px) {
+    nav{
+        height: 5rem;
+        padding: 2rem 2rem;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #logo{
+        max-height: 4rem;
+        margin: 0rem 2rem 1rem 2rem ;
+    }
 }
 div.buttons{
     display: flex;
@@ -55,10 +78,18 @@ a#logIn:hover{
 main{
     text-align: center;
 }
+
 h1.title{
-    margin-top: 5rem;
+    margin: 5rem auto 3rem auto;
     font-size: 2.5rem;
     font-weight: 600;
+    max-width: 90%;
+}
+@media only screen and (max-width: 450px) {
+    h1.title{
+        font-size: 2rem;
+        margin: 3rem  auto;
+    }
 }
 p.description{
     font-weight: 600;
@@ -75,16 +106,29 @@ div.upload-section {
     margin: 0 auto;
     border-radius: 1rem;
 }
-
+@media only screen and (max-width: 800px) {
+    div.upload-section {
+        width: 80%;
+    }
+}
 div.inputFileButtonDiv {
     width: 60%;
     height: 3rem;
     display: flex;
     justify-content: space-between;
-    
     align-items: center;
 }
 
+@media only screen and (max-width: 450px) {
+    div.inputFileButtonDiv {
+        width: 80%;
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+}
 label.custom-file-upload {
     width: 60%;
     height: 100%;
@@ -117,13 +161,13 @@ button.custom-file-upload {
     align-items: center;
     justify-content: center;
     color: white;
-    font-family: 1rem;
     background-color: var(--blue);
     border: 2px solid var(--blue);
     border-radius: 0.4rem;
     margin-left: 1px;
     cursor: pointer;
     span.anal.material-symbols-outlined {
+        font-size: 1.5rem;
         font-variation-settings: 
             'FILL' 1,
             'wght' 200;
@@ -146,7 +190,11 @@ p.inBetweenP{
     justify-content: center;
     margin: 1rem auto;
 }
-
+@media only screen and (max-width: 500px) {
+    p.inBetweenP{
+        width: 80%;
+    }
+}
 p.learnMoreP{
     display: flex;
     align-items: center;
@@ -163,19 +211,40 @@ section.cardsAndText{
     width: 70%;
     gap: 2rem;
     margin: 0 auto;
-    
+}
+@media only screen and (max-width: 1000px) {
+    section.cardsAndText{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    section.cardsAndText{
+        display: block;
+    }
 }
 div.leftText{
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 40%;
-    text-align: left;
-    
+    text-align: left; 
+}
+@media only screen and (max-width: 700px) {
+    div.leftText{
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 div.rightCards{
     background-color: #f7f7f7;
     width: 60%;
+}
+@media only screen and (max-width: 700px) {
+    div.rightCards{
+        width: 100%;
+        margin: 0 auto;
+
+    }
 }
 div.greySwitchCard{
     display: flex;
@@ -246,12 +315,12 @@ div.footerBlueDiv p{
 }
 div.footerBlueDiv button{
     margin: 1rem;
+    font-size: 1.5rem;
 
     display: flex;
     align-items: center;
     margin: 1rem auto;
     color: white;
-    font-family: 1rem;
     background-color: var(--blue);
     border-radius: 0.4rem;
     padding: 0.7rem 2rem;
@@ -261,5 +330,7 @@ div.footerBlueDiv button{
             'FILL' 1,
             'wght' 200;
         margin-right: 0.5rem;
+    font-size: 1.5rem;
+
     }
 }
