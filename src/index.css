@@ -1,6 +1,8 @@
 html{
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+    height: 100%;
 }
 @media only screen and (max-width: 1200px) {
     html{
@@ -22,11 +24,14 @@ html{
     --light-blue: #ebf3fe;
 }
 /* NAV */
-nav{
+nav {
     height: 3.5rem;
     padding: 2rem 2rem;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 2;  /* Higher z-index to place it above the gradient */
+    background-color: rgba(255, 255, 255, 0.8);  /* Slightly transparent background to distinguish it from the gradient */
 }
 @media only screen and (max-width: 450px) {
     nav{
@@ -79,15 +84,15 @@ a#logIn:hover{
 main{
     text-align: center;
 }
-#lopLeftGradient{
-    position: absolute;
+#lopLeftGradient {
+    position: fixed;
     left: 0;
     top: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     content: '';
     background: rgb(59,133,251);
-    background: radial-gradient( rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
-    z-index: -1;
+    background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    z-index: 0; 
     width: 100%;
     height: 100%;
 }
@@ -103,9 +108,7 @@ img#soc-med2{
 }
 div#midRightGradient{
     position: absolute;
-    /* right: 0; */
-    /* bottom: 0; */
-    transform: translate(50%,30%);
+    transform: translate(50%,0%);
     content: '';
     background: rgb(59,133,251);
     background: radial-gradient( rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
@@ -139,7 +142,7 @@ div.upload-section {
     align-items: center;
     padding: 2rem 1rem;
     margin: 0 auto;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
 }
 @media only screen and (max-width: 800px) {
     div.upload-section {
@@ -165,11 +168,11 @@ div.inputFileButtonDiv {
     
 }
 label.custom-file-upload {
-    width: 60%;
+    width: 70%;
     height: 100%;
-    border: 2px solid black;
+    border: 1px dotted black;
     box-sizing: border-box;
-    border-radius: 0.4rem;
+    border-radius: 1rem;
     padding: 0rem 1rem;
 
     text-align: start;
@@ -183,6 +186,8 @@ label.custom-file-upload {
         overflow: hidden;
     }
     span.ufs.material-symbols-outlined {
+        margin-right: 1rem;
+        color: grey;
         font-variation-settings: 
             'FILL' 1;
     }
@@ -191,14 +196,14 @@ label.custom-file-upload {
 
 button.custom-file-upload {
     height: 100%;
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     background-color: var(--blue);
     border: 2px solid var(--blue);
-    border-radius: 0.4rem;
+    border-radius: 1rem;
     margin-left: 1px;
     cursor: pointer;
     span.anal.material-symbols-outlined {
@@ -339,37 +344,91 @@ p.card:hover{
     color: #888;
     border: 2px solid #888;
 }
+/* Section FINISH */
+section.finish{
+margin: 16rem;
+display: flex;
+gap: 2rem;
+flex-direction: column;
+}
+h1.finish{
+    font-size: 2.5rem;
+}
+button.finish{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    background-color: var(--blue);
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: white;
+}
+div.finish{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+p.finish{
+    display: flex;
+    align-items: center;
+}
+
+body {
+    position: relative; /* Make the body the reference point for absolute positioning */
+}
+
 /* FOOTER */
 footer{
     margin: 1.5rem 0;
 }
-div.footerBlueDiv{
-    background-color: var(--light-blue);
-    width: 70%;
-    margin: 3rem auto;
-    border-radius: 1rem;
-    padding: 1rem;
-}
-div.footerBlueDiv p{
-    margin: 1rem;
-}
-div.footerBlueDiv button{
-    margin: 1rem;
-    font-size: 1rem;
-
+footer p{
     display: flex;
     align-items: center;
-    margin: 1rem auto;
-    color: white;
-    background-color: var(--blue);
-    border-radius: 0.4rem;
-    padding: 0.7rem 2rem;
-    cursor: pointer;
-    span.anal.material-symbols-outlined {
-        font-variation-settings: 
-            'FILL' 1,
-            'wght' 200;
-        margin-right: 0.5rem;
-        font-size: 1.5rem;
+    color: grey;
+    justify-content: center;
+    span#lock{
+        color: green;
+        margin-right: 1rem;
     }
+}
+.container {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+nav {
+    height: 3.5rem;
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1; 
+    background-color: rgba(255, 255, 255, 0.8);
+}
+main {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+div#bottomLeftGradient {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+    content: '';
+    background: rgb(59,133,251);
+    background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    z-index: 0; 
+    width: 100%;
+    height: 50vh;
+    pointer-events: none;
+}
+
+footer {
+    position: relative;
+    margin: 1.5rem 0;
+    z-index: 2;
 }
