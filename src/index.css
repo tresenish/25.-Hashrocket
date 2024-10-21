@@ -6,7 +6,6 @@ html {
 }
 button{
     font-family: "League Spartan", sans-serif;
-
 }
 
 @media only screen and (max-width: 1200px) {
@@ -100,7 +99,7 @@ a#logIn:hover {
 /* MAIN */
 main {
     position: relative;
-    z-index: 1; /* Main content should have a higher z-index */
+    z-index: 1;
     text-align: center;
     overflow: hidden;
 }
@@ -160,7 +159,8 @@ h1.title {
 }
 
 p.description {
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.5rem;
     margin: 3rem;
 }
 
@@ -227,7 +227,7 @@ button.custom-file-upload {
     border-radius: 1rem;
     margin-left: 1px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
 
 }
 
@@ -251,6 +251,8 @@ p.inBetweenP {
     display: flex;
     justify-content: center;
     margin: 3rem auto;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 @media only screen and (max-width: 500px) {
@@ -265,6 +267,8 @@ p.learnMoreP {
     justify-content: center;
     margin: 1.5rem auto 3rem;
     color: var(--blue);
+    font-size: 1.1rem;
+
 }
 
 p.learnMoreP a.learn-more {
@@ -310,16 +314,25 @@ div.leftText {
     }
 }
 h1#identify{
-    font-size: 1.7rem;
-    font-weight: 600;
-    width: 70%;
+    font-size: 2.37rem;
+    font-weight: 500;
+    width: 80%;
 }
+p.HashrocketProvides{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+a.HashrocketProvides{
+    font-weight: 400;
+    font-size: 1.1rem;
 
+}
 span#high-performing {
     background: linear-gradient(90deg, #2569C8, #3581FA, #FFBBB7);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    font-weight: 600;
+
 }
 
 div.rightCards {
@@ -336,8 +349,8 @@ div.rightCards {
 
 img.grayCardPhoto {
     max-width: 60%;
-    opacity: 1; /* Initially invisible */
-    transition: opacity 0.3s ease; /* Smooth fade-in and fade-out effect */
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .greySwitchCard img {
@@ -375,7 +388,7 @@ p.card {
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    transition: color 0.3s ease, border 0.3s ease; /* Add transition for color and border */
+    transition: color 0.3s ease, border 0.3s ease;
 }
 
 p.card.selected {

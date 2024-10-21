@@ -54,7 +54,6 @@
                     </label>
                     <button class="custom-file-upload"><span class="anal material-symbols-outlined">auto_awesome</span>Analyze</button>
                 </div>
-
                 <!-- <p class="inputType">.JPG, .JPEG, or .PNG formats</p> -->
             </div>
 
@@ -72,10 +71,10 @@
             <section class="cardsAndText">
                 <div class="leftText">
                     <h1 id="identify">Identify <span id="high-performing">High-Performing</span>  Ad Creatives Without</h1>
-                    <p>Hashrocket provides predictive analytics for your ad creatives, and gives you performance insights,
+                    <p class="HashrocketProvides">Hashrocket provides predictive analytics for your ad creatives, and gives you performance insights,
                          AI-powered improvement suggestions, and a preview of how your audience will react to each ad visual.</p>
-                    <p>Focus on launching ad campaigns that perform.</p>
-                    <a style="text-decoration: none; color: var(--blue);" href="">View report example</a>
+                    <p class="HashrocketProvides">Focus on launching ad campaigns that perform.</p>
+                    <a class="HashrocketProvides" style="text-decoration: none; color: var(--blue);" href="">View report example</a>
                 </div>
                 <div class="rightCards">
                     <img class="grayCardPhoto" src='./src/grey card/Conversion Rate.png' alt="">
@@ -148,7 +147,7 @@
         const cards = document.querySelectorAll('.card');
         const grayCardPhoto = document.querySelector('.grayCardPhoto');
         const cardDescription = document.querySelector('.cardDescription');
-        
+
         cards.forEach(card => {
             card.addEventListener('click', function() {
                 cards.forEach(c => c.classList.remove('selected'));
