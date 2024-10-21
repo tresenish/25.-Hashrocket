@@ -300,8 +300,8 @@ div.leftText {
     display: flex;
     flex-direction: column;
     background-color: #E5E7F04D;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 1.87rem;
+    gap: 2.5rem;
     width: 40%;
     text-align: left;
     border-radius: 1rem;
@@ -320,7 +320,7 @@ h1#identify{
 }
 p.HashrocketProvides{
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 a.HashrocketProvides{
     font-weight: 400;
@@ -360,9 +360,11 @@ img.grayCardPhoto {
 }
 
 p.cardDescription {
-    width: 75%;
-    min-height: 3.5rem;
-    margin: 1rem auto;
+    width: 80%;
+    min-height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 1rem auto 0 auto;
 }
 
 div.cardContainer {
@@ -400,6 +402,10 @@ p.card:hover {
     color: #888;
     border: 2px solid #888;
 }
+p.card.selected:hover {
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
 
 
 /* FINISH SECTION */
@@ -411,7 +417,7 @@ section.finish {
 }
 
 h1.finish {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
     font-family: "Inter", sans-serif;
     font-weight: 600;
 
@@ -427,7 +433,7 @@ button.finish {
     border-radius: 1rem;
     cursor: pointer;
     color: white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "League Spartan", sans-serif;
 
 }
