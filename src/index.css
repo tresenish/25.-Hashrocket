@@ -1,198 +1,219 @@
-html{
+html {
     font-size: 16px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Inter", sans-serif;
     overflow-x: hidden;
     height: 100%;
 }
+button{
+    font-family: "League Spartan", sans-serif;
+
+}
+
 @media only screen and (max-width: 1200px) {
-    html{
+    html {
         font-size: 14px;
     }
 }
+
 @media only screen and (max-width: 700px) {
-    html{
+    html {
         font-size: 12px;
     }
 }
-*{
+
+* {
     border: 0;
     margin: 0;
     padding: 0;
 }
+
 :root {
     --blue: #007aff;
     --light-blue: #ebf3fe;
 }
+body {
+    position: relative;
+}
+
+.container {
+    position: relative;
+
+}
 /* NAV */
 nav {
+    position: relative;
+    z-index: 1;
     height: 3.5rem;
-    padding: 2rem 2rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;  /* Higher z-index to place it above the gradient */
-    background-color: rgba(255, 255, 255, 0.8);  /* Slightly transparent background to distinguish it from the gradient */
+    background-color: rgba(255, 255, 255, 0.8);
 }
-@media only screen and (max-width: 450px) {
-    nav{
-        height: 5rem;
-        padding: 2rem 2rem;
 
-        display: flex;
+@media only screen and (max-width: 450px) {
+    nav {
+        height: 5rem;
         justify-content: center;
         flex-wrap: wrap;
     }
-    #logo{
+    #logo {
         max-height: 4rem;
-        margin: 0rem 2rem 1rem 2rem ;
+        margin: 0 2rem 1rem;
     }
 }
-div.buttons{
+
+div.buttons {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
-a.nav-button{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
 
+a.nav-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 8rem;
     height: 3rem;
     margin: 0 0.5rem;
     border: 1px solid var(--blue);
-    border-radius: 0.5rem;
-
+    border-radius: 2rem;
     text-decoration: none;
     box-sizing: border-box;
 }
-a#startForFree{
+a#logIn{
+    color: var(--blue);
+}
+a#startForFree {
     color: white;
     background-color: var(--blue);
 }
-a#startForFree:hover{
+
+a#startForFree:hover {
     color: var(--blue);
     background-color: white;
 }
-a#logIn:hover{
+
+a#logIn:hover {
     color: white;
     background-color: var(--blue);
-
 }
+
 /* MAIN */
-
-main{
+main {
+    position: relative;
+    z-index: 1; /* Main content should have a higher z-index */
     text-align: center;
+    overflow: hidden;
 }
+
 #lopLeftGradient {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     transform: translate(-50%, -50%);
-    content: '';
-    background: rgb(59,133,251);
     background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
-    z-index: 0; 
-    width: 100%;
-    height: 100%;
+    z-index: 2 !important;
+    width: 50%;
+    aspect-ratio: 1/1;
+
+    pointer-events: none;
 }
-img#soc-med1{
+
+img#soc-med1, img#soc-med2 {
     position: absolute;
-    top: 10rem;
+    top: 2rem;
+    opacity: 0.5;
+    width: 25%;
+    height: auto;
+    z-index: -1; 
+    pointer-events: none;
+}
+
+img#soc-med1 {
     left: 0;
 }
-img#soc-med2{
-    position: absolute;
-    top: 10rem;
+
+img#soc-med2 {
     right: 0;
 }
-div#midRightGradient{
+
+div#midRightGradient {
     position: absolute;
-    transform: translate(50%,0%);
-    content: '';
-    background: rgb(59,133,251);
-    background: radial-gradient( rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    transform: translate(50%, -15%);
+    background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
     z-index: -1;
     width: 100%;
     height: 100%;
-    /* border: 3px solid black; */
 }
-h1.title{
-    margin: 5rem auto 3rem auto;
+
+h1.title {
+    margin: 5rem auto 3rem;
     font-size: 2.5rem;
     font-weight: 600;
     max-width: 90%;
 }
+
 @media only screen and (max-width: 450px) {
-    h1.title{
+    h1.title {
         font-size: 2rem;
-        margin: 3rem  auto;
+        margin: 3rem auto;
     }
 }
-p.description{
+
+p.description {
     font-weight: 600;
     margin: 2rem;
 }
-/* Blue Input Div */
+
+/* UPLOAD SECTION */
 div.upload-section {
     background: linear-gradient(90deg, rgba(8, 111, 255, 0.4), rgba(53, 129, 250, 0.4), rgba(111, 181, 255, 0.4));
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
     margin: 0 auto;
     border-radius: 1.5rem;
 }
+
 @media only screen and (max-width: 800px) {
     div.upload-section {
         width: 80%;
     }
 }
+
 div.inputFileButtonDiv {
     width: 60%;
     height: 3rem;
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
     align-items: center;
 }
 
 @media only screen and (max-width: 450px) {
     div.inputFileButtonDiv {
         width: 80%;
-        height: 3rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
     }
-    
 }
+
 label.custom-file-upload {
     width: 70%;
     height: 100%;
     border: 1px dotted black;
-    box-sizing: border-box;
     border-radius: 1rem;
-    padding: 0rem 1rem;
-
-    text-align: start;
-    overflow: hidden;
+    padding: 0 1rem;
     display: flex;
     align-items: center;
-    cursor: pointer;
     background-color: white;
-    span.fileSpan{
-        text-wrap: nowrap;
-        overflow: hidden;
-    }
-    span.ufs.material-symbols-outlined {
-        margin-right: 1rem;
-        color: grey;
-        font-variation-settings: 
-            'FILL' 1;
-    }
+    cursor: pointer;
 }
 
+label.custom-file-upload span.ufs.material-symbols-outlined {
+    margin-right: 1rem;
+    color: grey;
+    font-variation-settings: 'FILL' 1;
+}
 
 button.custom-file-upload {
     height: 100%;
@@ -206,156 +227,177 @@ button.custom-file-upload {
     border-radius: 1rem;
     margin-left: 1px;
     cursor: pointer;
-    span.anal.material-symbols-outlined {
-        font-size: 1.5rem;
-        font-variation-settings: 
-            'FILL' 1,
-            'wght' 200;
-    }
-    
+    font-size: 1rem;
+
 }
 
+button.custom-file-upload span.anal.material-symbols-outlined {
+    font-size: 1.5rem;
+    font-variation-settings: 'FILL' 1, 'wght' 200;
+    margin-right: 0.5rem;
+}
 
 p.inputType {
     display: block;
     width: 90%;
-    margin: 1rem 0 0 0;
+    margin-top: 1rem;
     font-size: 0.9rem;
     color: grey;
 }
-/* Between Section  */
-p.inBetweenP{
+
+/* BETWEEN SECTIONS */
+p.inBetweenP {
     width: 50%;
     display: flex;
     justify-content: center;
     margin: 3rem auto;
 }
+
 @media only screen and (max-width: 500px) {
-    p.inBetweenP{
+    p.inBetweenP {
         width: 80%;
     }
 }
-p.learnMoreP{
+
+p.learnMoreP {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1.5rem auto 3rem auto;
+    margin: 1.5rem auto 3rem;
     color: var(--blue);
-    a.learn-more{
-        color: var(--blue);
-    }
 }
-/* cardsAndText SECTION*/
-section.cardsAndText{
+
+p.learnMoreP a.learn-more {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* CARDS AND TEXT SECTION */
+section.cardsAndText {
     display: flex;
     width: 70%;
     gap: 2rem;
     margin: 0 auto;
 }
+
 @media only screen and (max-width: 1000px) {
-    section.cardsAndText{
+    section.cardsAndText {
         width: 85%;
     }
 }
+
 @media only screen and (max-width: 700px) {
-    section.cardsAndText{
+    section.cardsAndText {
         display: block;
     }
 }
-div.leftText{
+
+div.leftText {
     display: flex;
     flex-direction: column;
     background-color: #E5E7F04D;
     padding: 1rem;
     gap: 1rem;
     width: 40%;
-    text-align: left; 
+    text-align: left;
+    border-radius: 1rem;
 }
+
 @media only screen and (max-width: 700px) {
-    div.leftText{
+    div.leftText {
         width: 90%;
         margin: 0 auto;
     }
 }
-span#high-performing{
+
+span#high-performing {
     background: linear-gradient(90deg, #2569C8, #3581FA, #FFBBB7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
-div.rightCards{
+
+div.rightCards {
     width: 60%;
     padding: 1rem 0;
 }
+
 @media only screen and (max-width: 700px) {
-    div.rightCards{
+    div.rightCards {
         width: 100%;
         margin: 0 auto;
-
     }
 }
-img.grayCardPhoto{
+
+img.grayCardPhoto {
     max-width: 60%;
+    opacity: 1; /* Initially invisible */
+    transition: opacity 0.3s ease; /* Smooth fade-in and fade-out effect */
 }
 
-.greySwitchCard img{
+.greySwitchCard img {
     width: 80%;
     height: auto;
     border-radius: 2rem;
 }
-p.cardDescription{
+
+p.cardDescription {
     width: 80%;
     margin: 1rem auto;
 }
-div.cardContainer{
+
+div.cardContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
 }
+
 @media only screen and (max-width: 700px) {
-    div.cardContainer{
+    div.cardContainer {
         gap: 0.5rem;
         padding: 0.5rem;
     }
 }
-p.card{
+p.card {
     color: #c0c0c0;
     border: 2px solid #c0c0c0;
     border-radius: 0.3rem;
-    text-wrap: nowrap;
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    span.card.material-symbols-outlined{
-        margin-right: 0.5rem;
-        font-variation-settings: 
-            'FILL' 1,
-            'wght' 200;
-    }
+    transition: color 0.3s ease, border 0.3s ease; /* Add transition for color and border */
 }
-p.card.selected{
+
+p.card.selected {
     color: var(--blue);
     border: 2px solid var(--blue);
 }
-p.card:hover{
+
+p.card:hover {
     color: #888;
     border: 2px solid #888;
 }
-/* Section FINISH */
-section.finish{
-margin: 16rem;
-display: flex;
-gap: 2rem;
-flex-direction: column;
-}
-h1.finish{
-    font-size: 2.5rem;
-}
-button.finish{
+
+
+/* FINISH SECTION */
+section.finish {
+    margin: 16rem;
     display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+h1.finish {
+    font-size: 2.5rem;
+    font-family: "Inter", sans-serif;
+}
+
+button.finish {
+    display: flex;
+    gap: 0.5rem;
     align-items: center;
     margin: 0 auto;
     background-color: var(--blue);
@@ -363,72 +405,57 @@ button.finish{
     border-radius: 1rem;
     cursor: pointer;
     color: white;
+    font-size: 0.9rem;
+    font-family: "League Spartan", sans-serif;
+
 }
-div.finish{
-    width: 40%;
+button.finish span {
+    font-size: 1.3rem;
+    font-variation-settings: 'FILL' 0, 'wght' 300;
+}
+
+
+div.finish {
+    width: 50%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
-p.finish{
+
+p.finish {
     display: flex;
     align-items: center;
-}
-
-body {
-    position: relative; /* Make the body the reference point for absolute positioning */
+    font-family: "Inter", sans-serif;
+    gap: 0.5rem;
 }
 
 /* FOOTER */
-footer{
+footer {
     margin: 1.5rem 0;
 }
-footer p{
+
+footer p {
     display: flex;
     align-items: center;
-    color: grey;
     justify-content: center;
-    span#lock{
-        color: green;
-        margin-right: 1rem;
-    }
+    color: grey;
 }
-.container {
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
+
+footer p span#lock {
+    color: green;
+    margin-right: 1rem;
 }
-nav {
-    height: 3.5rem;
-    padding: 2rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1; 
-    background-color: rgba(255, 255, 255, 0.8);
-}
-main {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
+
+/* GRADIENT SECTION */
 div#bottomLeftGradient {
     position: absolute;
     left: 0;
     bottom: 0;
     transform: translate(-50%, 50%);
-    content: '';
-    background: rgb(59,133,251);
     background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
-    z-index: 0; 
+    z-index: 0;
     width: 100%;
     height: 50vh;
     pointer-events: none;
 }
 
-footer {
-    position: relative;
-    margin: 1.5rem 0;
-    z-index: 2;
-}
