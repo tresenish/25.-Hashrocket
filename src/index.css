@@ -347,7 +347,8 @@ img.grayCardPhoto {
 }
 
 p.cardDescription {
-    width: 80%;
+    width: 75%;
+    min-height: 3.5rem;
     margin: 1rem auto;
 }
 

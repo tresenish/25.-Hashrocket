@@ -147,14 +147,16 @@
         };
         const cards = document.querySelectorAll('.card');
         const grayCardPhoto = document.querySelector('.grayCardPhoto');
+        const cardDescription = document.querySelector('.cardDescription');
+        
         cards.forEach(card => {
             card.addEventListener('click', function() {
                 cards.forEach(c => c.classList.remove('selected'));
                 card.classList.add('selected');
-                const cardName = card.childNodes[1].nodeValue.trim();
+                const cardName = card.textContent.trim();
                 if (cardData[cardName]) {
                     const description = cardData[cardName].description;
-                    document.querySelector('.cardDescription').textContent = description;
+                    cardDescription.textContent = description;
                     grayCardPhoto.style.opacity = 0;
                     setTimeout(() => {
                         const imgSrc = cardData[cardName].imgSrc;
@@ -168,6 +170,7 @@
                 }
             });
         });
+
 
     </script>
 
