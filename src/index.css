@@ -1,8 +1,10 @@
 html {
     font-size: 16px;
     font-family: "Inter", sans-serif;
-    overflow-x: hidden;
     height: 100%;
+}
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 button{
     font-family: "League Spartan", sans-serif;
@@ -11,12 +13,14 @@ button{
 @media only screen and (max-width: 1200px) {
     html {
         font-size: 14px;
+
     }
 }
 
 @media only screen and (max-width: 700px) {
     html {
         font-size: 12px;
+        overflow-x: hidden;
     }
 }
 
@@ -30,6 +34,7 @@ button{
     --blue: #007aff;
     --light-blue: #ebf3fe;
 }
+
 body {
     position: relative;
 }
@@ -76,11 +81,14 @@ a.nav-button {
     border: 1px solid var(--blue);
     border-radius: 2rem;
     text-decoration: none;
+    text-wrap: nowrap;
     box-sizing: border-box;
 }
+
 a#logIn{
     color: var(--blue);
 }
+
 a#startForFree {
     color: white;
     background-color: var(--blue);
@@ -104,19 +112,6 @@ main {
     overflow: hidden;
 }
 
-#lopLeftGradient {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
-    z-index: 2 !important;
-    width: 50%;
-    aspect-ratio: 1/1;
-
-    pointer-events: none;
-}
-
 img#soc-med1, img#soc-med2 {
     position: absolute;
     top: 4rem;
@@ -126,7 +121,11 @@ img#soc-med1, img#soc-med2 {
     z-index: -1; 
     pointer-events: none;
 }
-
+@media only screen and (max-width: 450px) {
+    img#soc-med1, img#soc-med2 {
+        width: 35%;
+    }
+}
 img#soc-med1 {
     left: 0;
 }
@@ -135,18 +134,11 @@ img#soc-med2 {
     right: 0;
 }
 
-div#midRightGradient {
-    position: absolute;
-    transform: translate(50%, -15%);
-    background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
+
 
 h1.title {
     margin: 5rem auto 3rem;
-    font-size: 2.5rem;
+    font-size: 3.25rem;
     font-weight: 600;
     max-width: 90%;
 }
@@ -190,10 +182,15 @@ div.inputFileButtonDiv {
     gap: 1rem;
     align-items: center;
 }
-
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 1200px) {
     div.inputFileButtonDiv {
         width: 80%;
+    }
+}
+@media only screen and (max-width: 450px) {
+    div.inputFileButtonDiv {
+        width: 99%;
+        gap: 0.5rem;
     }
 }
 
@@ -214,7 +211,11 @@ label.custom-file-upload span.ufs.material-symbols-outlined {
     color: grey;
     font-variation-settings: 'FILL' 1;
 }
-
+@media only screen and (max-width: 400px) {
+    label.custom-file-upload span.ufs.material-symbols-outlined {
+        margin-right: 0.3rem;
+    }
+}
 button.custom-file-upload {
     height: 100%;
     width: 30%;
@@ -228,7 +229,6 @@ button.custom-file-upload {
     margin-left: 1px;
     cursor: pointer;
     font-size: 1.1rem;
-
 }
 
 button.custom-file-upload span.anal.material-symbols-outlined {
@@ -281,7 +281,7 @@ section.cardsAndText {
     display: flex;
     width: 70%;
     gap: 2rem;
-    margin: 0 auto;
+    margin: 12rem auto 0 auto;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -293,6 +293,7 @@ section.cardsAndText {
 @media only screen and (max-width: 700px) {
     section.cardsAndText {
         display: block;
+        width: 100%;
     }
 }
 
@@ -309,7 +310,7 @@ div.leftText {
 
 @media only screen and (max-width: 700px) {
     div.leftText {
-        width: 90%;
+        width: 70%;
         margin: 0 auto;
     }
 }
@@ -342,7 +343,7 @@ div.rightCards {
 
 @media only screen and (max-width: 700px) {
     div.rightCards {
-        width: 100%;
+        width: 95%;
         margin: 0 auto;
     }
 }
@@ -352,21 +353,50 @@ img.grayCardPhoto {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
-
-.greySwitchCard img {
-    width: 80%;
-    height: auto;
-    border-radius: 2rem;
+@media only screen and (max-width: 700px) {
+    img.grayCardPhoto {
+        max-width: 80%;
+        margin-top: 3rem;
+    }
 }
 
 p.cardDescription {
     width: 80%;
-    min-height: 5rem;
+    min-height: 7.5rem;
     font-size: 1.5rem;
     font-weight: 300;
     margin: 1rem auto 0 auto;
 }
-
+@media only screen and (max-width: 1550px) {
+    p.cardDescription {
+        min-height: 9.5rem;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    p.cardDescription {
+        min-height: 12rem;
+    }
+}
+@media only screen and (max-width: 800px) {
+    p.cardDescription {
+        min-height: 16rem;
+    }
+}
+@media only screen and (max-width: 700px) {
+    p.cardDescription {
+        min-height: 7.5rem;
+    }
+}
+@media only screen and (max-width: 460px) {
+    p.cardDescription {
+        min-height: 12rem;
+    }
+}
+@media only screen and (max-width: 340px) {
+    p.cardDescription {
+        min-height: 13rem;
+    }
+}
 div.cardContainer {
     display: flex;
     flex-wrap: wrap;
@@ -410,15 +440,24 @@ p.card.selected:hover {
 
 /* FINISH SECTION */
 section.finish {
-    margin: 16rem;
+    margin: 16rem auto 16rem auto;
     display: flex;
     gap: 2rem;
     flex-direction: column;
 }
-
+@media only screen and (max-width: 700px) {
+    section.finish {
+        margin: 16rem auto 16rem auto;
+        max-width: 90%;
+    }
+}
+@media only screen and (max-width: 450px) {
+    section.finish {
+        max-width: 95%;
+    }
+}
 h1.finish {
     font-size: 3.25rem;
-    font-family: "Inter", sans-serif;
     font-weight: 600;
 
 }
@@ -434,34 +473,52 @@ button.finish {
     cursor: pointer;
     color: white;
     font-size: 1.1rem;
-    font-family: "League Spartan", sans-serif;
-
+}
+@media only screen and (max-width: 450px) {
+    button.finish {
+        gap: 0.25rem;
+    }
 }
 button.finish span {
     font-size: 1.3rem;
     font-variation-settings: 'FILL' 0, 'wght' 300;
 }
 
-
 div.finish {
-    width: 50%;
+    /* width: 30%; */
+    gap: 2rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
-
+@media only screen and (max-width: 700px) {
+    div.finish {
+        width: 80%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 500px) {
+    div.finish {
+        width: 90%;
+    }
+}
 p.finish {
     display: flex;
     align-items: center;
-    font-family: "Inter", sans-serif;
     gap: 0.5rem;
+    text-wrap: nowrap;
 }
 
 /* FOOTER */
 footer {
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
 }
-
+@media only screen and (max-width: 500px) {
+    footer {
+        max-width: 80%;
+    }
+}
 footer p {
     display: flex;
     align-items: center;
@@ -475,15 +532,37 @@ footer p span#lock {
 }
 
 /* GRADIENT SECTION */
+div#lopLeftGradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(rgba(59,133,251,0.35) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    z-index: 2 !important;
+    width: 50%;
+    aspect-ratio: 1/1;
+    pointer-events: none;
+}
+div#midRightGradient {
+    position: absolute;
+    transform: translate(150%, 20%);
+    background: radial-gradient(rgba(59,133,251,0.35) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+    width: 50%;
+    aspect-ratio: 1/1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
 div#bottomLeftGradient {
     position: absolute;
     left: 0;
     bottom: 0;
     transform: translate(-50%, 50%);
-    background: radial-gradient(rgba(59,133,251,0.3) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(rgba(82, 99, 126, 0.35) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
     z-index: 0;
-    width: 100%;
-    height: 50vh;
+    width: 50%;
+    aspect-ratio: 1 / 1;
     pointer-events: none;
 }
 
