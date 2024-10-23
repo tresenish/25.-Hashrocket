@@ -559,7 +559,7 @@ div#bottomLeftGradient {
     left: 0;
     bottom: 0;
     transform: translate(-50%, 50%);
-    background: radial-gradient(rgba(82, 99, 126, 0.35) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
+    background: radial-gradient(rgba(59,133,251,0.35) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 100%);
     z-index: 0;
     width: 50%;
     aspect-ratio: 1 / 1;
